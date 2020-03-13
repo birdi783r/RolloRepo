@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Rollosteuerung_WebInterface.Models.Device>
+
+@{
+    ViewBag.Title = "Liste";
+}
+
+<h2>Geräteliste</h2>
+
+<p>
+    @Html.ActionLink("Neues Device erzeugen", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceID)
+        </th>  
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomAsigned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeviceID)
+        </td>       
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomAsigned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomNr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedOn)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Editieren", "Edit", new { did=item.DeviceID }) |
+            @Html.ActionLink("Details", "Details", new { did=item.DeviceID }) |
+            @Html.ActionLink("Löschen", "Delete", new { did=item.DeviceID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model Rollosteuerung_WebInterface.Models.Device
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Device</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomAsigned)
+        </dt>d
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomAsigned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedOn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DeviceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

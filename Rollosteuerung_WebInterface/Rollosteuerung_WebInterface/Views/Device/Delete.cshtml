@@ -1,0 +1,71 @@
+﻿@model Rollosteuerung_WebInterface.Models.Device
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Löschen</h2>
+
+<h3>Sicher, dass Sie das Gerät löschen wollen?</h3>
+<div>
+    <h4>Gerät</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceID)
+        </dd>   
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomAsigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomAsigned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedOn)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm(@Model)) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Geräteliste","List", "Device")
+        </div>
+    }
+</div>
